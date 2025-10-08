@@ -30,7 +30,7 @@ By merging environmental data and AI-driven analytics, the system helps governme
 ---
 
 ## 🏗️ System Architecture
-
+"""
 hackatlon/
 ├── backend/
 │ ├── main.py
@@ -58,7 +58,7 @@ hackatlon/
 ├── nasa4.jpg
 └── data2.jpg
 
-
+"""
 ---
 
 ## 🧩 Tech Stack
