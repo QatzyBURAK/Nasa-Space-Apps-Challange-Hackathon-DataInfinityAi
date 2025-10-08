@@ -28,37 +28,36 @@ By merging environmental data and AI-driven analytics, the system helps governme
 - 🧩 **Scalable Architecture** ready for global agricultural and sustainability applications  
 
 ---
-'''
-## 🏗️ System Architecture
+## 🏗️ System Architecture  
+```  
+hackatlon/  
+├── backend/  
+│   ├── main.py  
+│   ├── model.py  
+│   ├── data/  
+│   │   ├── AKILLI_tarimsal_analiz.csv  
+│   │   ├── HIZLI_tarimsal_uygunluk_analizi.csv  
+│   │   ├── KAPSAMLI_tarimsal_verimlilik.csv  
+│   │   ├── COMPREHENSIVE_agricultural_productivity.csv  
+│   │   ├── osm_tarim_alanlari.csv  
+│   │   └── turkiye_detayli_tarim_alanlari.csv  
+│   ├── cache/  
+│   │   └── turkiye_water_sources_cache.json  
+│   └── results/  
+│       └── productivity_report.json  
+│  
+└── frontend/  
+    ├── index.html  
+    ├── proje_detay.html  
+    ├── iletisim.html  
+    └── assets/  
+        ├── nasa1.jpg  
+        ├── nasa2.jpg  
+        ├── nasa3.jpg  
+        ├── nasa4.jpg  
+        └── data2.jpg  
+```
 
-hackatlon/
-├── backend/
-│ ├── main.py
-│ ├── model.py
-│ ├── data/
-│ │ ├── AKILLI_tarimsal_analiz.csv
-│ │ ├── HIZLI_tarimsal_uygunluk_analizi.csv
-│ │ ├── KAPSAMLI_tarimsal_verimlilik.csv
-│ │ ├── COMPREHENSIVE_agricultural_productivity.csv
-│ │ ├── osm_tarim_alanlari.csv
-│ │ └── turkiye_detayli_tarim_alanlari.csv
-│ ├── cache/
-│ │ └── turkiye_water_sources_cache.json
-│ └── results/
-│ └── productivity_report.json
-│
-└── frontend/
-├── index.html
-├── proje_detay.html
-├── iletisim.html
-└── assets/
-├── nasa1.jpg
-├── nasa2.jpg
-├── nasa3.jpg
-├── nasa4.jpg
-└── data2.jpg
-
-'''
 ---
 
 ## 🧩 Tech Stack
