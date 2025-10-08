@@ -28,9 +28,9 @@ By merging environmental data and AI-driven analytics, the system helps governme
 - 🧩 **Scalable Architecture** ready for global agricultural and sustainability applications  
 
 ---
-
-## 🏗️ System Architecture
 '''
+## 🏗️ System Architecture
+
 hackatlon/
 ├── backend/
 │ ├── main.py
