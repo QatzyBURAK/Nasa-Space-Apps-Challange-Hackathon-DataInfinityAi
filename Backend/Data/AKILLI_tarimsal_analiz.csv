@@ -1,0 +1,5 @@
+latitude,longitude,elevation_m,slope_percent,water_distance_km,nearest_water_name,nearest_water_type,landcover_type,suitability_score,suitability_reasons,suitability_category
+36.9684323,37.5127116,78,2.8,0.5,Sacır Suyu,nehir,orchard,60,"suya çok yakın, düşük eğim, düşük rakım",UYGUN
+36.7813653,37.6204412,235,3.5,0.6,Aynifar Deresi,çay,orchard,60,"suya çok yakın, düşük eğim, düşük rakım",UYGUN
+39.0539043,36.1407267,272,3.6,1.5,İsimsiz,çay,orchard,60,"suya çok yakın, düşük eğim, düşük rakım",UYGUN
+40.752223,41.8280161,394,3.5,1.1,İsimsiz,göl,orchard,60,"suya çok yakın, düşük eğim, düşük rakım",UYGUN

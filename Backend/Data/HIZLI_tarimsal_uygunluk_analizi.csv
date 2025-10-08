@@ -1,0 +1,52 @@
+latitude,longitude,elevation_m,slope_percent,water_distance_m,urban_distance_m,landcover_type,region_name,data_source,suitability_score,suitability_reasons,suitability_category
+39.0570577,36.1713151,245.69120776615705,3.33266025111458,1474.7544935291573,4520.947365880064,orchard,,OpenStreetMap,100,"düşük yükselti, düşük eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+39.0539043,36.1407267,269.38108547615593,4.998614923568747,1582.2674978708776,15001.578154558027,orchard,,OpenStreetMap,80,"düşük yükselti, düşük eğim, suya ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+39.3283907,36.5507104,321.79576385728325,4.459149535484311,4110.18111925863,10081.734314282598,farmland,,OpenStreetMap,80,"düşük yükselti, düşük eğim, suya ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+36.7813653,37.6204412,259.8947852182559,2.466726543036961,7547.922690028685,11378.036787831476,orchard,,OpenStreetMap,60,"düşük yükselti, düşük eğim, mevcut tarım arazisi",UYGUN
+37.6146302,40.4720004,934.5777957762035,6.269325926637225,4030.2530755730563,8523.26977088476,orchard,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.6152714,40.4731273,898.6505294280192,8.6528410855598,7431.88329109851,5081.891927282902,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.6173897,40.4721328,914.2280213568542,6.226049882785671,4949.446689465265,16766.094582299716,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.6396067,40.9009811,831.5468632195854,8.472089133018024,2797.5318956378665,9902.072177638545,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.321151,41.5390238,910.5246790163426,9.440896017407042,7465.823658861388,4340.8776895620795,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3205272,41.5366846,999.2641561969334,9.42508055703949,2584.732870932233,16960.447055735203,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3199727,41.5448155,867.662378964943,5.670463151532062,4697.114644059547,3991.50487524888,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.2791242,41.4774946,935.1420763498843,8.096831277652065,2875.4278078468824,16248.405276067844,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3188272,41.5410241,880.6045308562417,5.001117421829022,5963.955760869933,7135.294160625188,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3203788,41.5417331,990.0545078418667,9.266303389330215,1221.2307939645332,18135.341895110683,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3207072,41.5462528,882.1075378556967,9.770606683624795,4536.711426137657,11434.291506130601,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.321224,41.5441579,828.5598296997201,6.97280275488347,3144.6977837086297,17588.114903923793,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2766292,41.4780964,891.595627844529,5.505331008016634,2911.8585450159885,4497.0839530041185,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.3214033,41.5439223,913.9794014586547,5.836236117940572,3735.538690039026,12668.088892086485,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2806977,41.4766645,989.204462049597,5.028320640180232,5956.73018085696,6377.3640767059105,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3165401,41.5424462,802.968687569313,8.383638563919332,3117.636380832193,14064.369512463998,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2753209,41.4880294,843.4327980103225,8.235880832315686,4574.483815267104,8431.517027976319,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.3192494,41.5411063,994.3994903779903,7.163483458166962,1667.3458089324124,3727.624490358108,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.3178373,41.544128,899.2504578427533,6.462238497556408,5013.511052075041,5527.285075296595,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.277119,41.4779856,918.345786779168,7.330616500723417,4279.264732078536,16376.889455701117,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3196664,41.5412801,928.3214735946058,9.61497035431643,6624.265622439822,9582.826644923498,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2777704,41.4870091,912.7848229359748,8.807251111656809,4774.1735174281985,3823.127436254486,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.3202638,41.5445481,1045.16781452963,8.99924689237179,2590.519999470763,5338.492189695447,farmland,,OpenStreetMap,65,"orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3190149,41.5410536,948.2641168040193,5.9924413472354665,4073.587353541442,4799.601081076045,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.3209631,41.5423488,865.9111356771284,8.136840493678843,1459.9106891159267,9199.790723201339,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.2758318,41.4780946,816.3476528410481,8.21014595590178,1617.9045022734163,14153.244705627849,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2777286,41.4777678,821.4950231611958,9.694367365247569,5696.062860953785,6302.857114273071,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3210266,41.5442909,836.3042147806472,9.846911061144962,7745.2294926327695,3786.592138917763,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3200019,41.5414772,974.1718704204927,5.2215883120522575,2485.938028841887,9660.44662729431,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.2789068,41.4775778,919.3812424312531,7.319558118151148,7318.258869669084,4550.205269179652,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.3206437,41.5420359,857.4883020252307,8.438262881875009,4465.545464912391,16497.12427522319,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2757065,41.4865464,833.0247627926373,7.5651352660278715,1435.0540411092106,17312.707824945097,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2755058,41.4783342,962.137157743714,7.613655777756991,1345.7001483118306,5096.820597295386,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.2759877,41.4780352,934.85579086764,9.991887525714654,1130.5158592092348,4269.025673359237,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.2766727,41.4866227,839.9247529958423,6.157289702903968,3152.5313646943873,9328.606554574755,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.3165652,41.5429339,808.2495881887697,6.677280683086211,6868.996551381674,6296.871264311647,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN
+37.2803307,41.4767168,982.6277401812871,9.206165789778117,2898.38760236651,11042.574457203878,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.5086899,41.4430533,878.5809939316955,6.301099081566724,4184.059345524633,11597.905319965972,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.5129736,41.9372374,920.8483887838672,6.48848435193867,2491.5042857188455,17704.212038351376,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.9600075,41.8575377,800.6442820272372,6.396591785432638,4833.311732786185,12425.319306765388,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.8177292,41.6128484,877.0365400486223,9.828817921995329,4381.878942545057,11889.713829700373,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+37.7911821,41.6239298,897.9923415568217,9.668155383667377,3935.8965167457914,6658.507727438324,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+37.7804994,41.6127877,882.4842042287102,6.446697729579845,4715.7145386122165,8999.491389719442,farmland,,OpenStreetMap,80,"orta yükselti, orta eğim, suya ideal mesafe, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+40.7236867,41.8012125,323.213105008351,4.589876226182703,7723.038562018147,12661.687998686815,farmland,,OpenStreetMap,60,"düşük yükselti, düşük eğim, mevcut tarım arazisi",UYGUN
+40.7214448,41.8004911,579.1117727803461,5.4887581432592665,3756.853401381373,12631.303118076856,farmland,,OpenStreetMap,60,"orta yükselti, orta eğim, suya ideal mesafe, mevcut tarım arazisi",UYGUN
+40.752223,41.8280161,224.28268353291227,3.68802039520812,6989.821839876591,3075.4168012840832,orchard,,OpenStreetMap,80,"düşük yükselti, düşük eğim, şehre ideal mesafe, mevcut tarım arazisi",ÇOK UYGUN
+38.2297301,38.2985889,905.997853027626,5.623852175653025,5959.175029240443,7592.906755065427,orchard,,OpenStreetMap,60,"orta yükselti, orta eğim, şehre ideal mesafe, mevcut tarım arazisi",UYGUN

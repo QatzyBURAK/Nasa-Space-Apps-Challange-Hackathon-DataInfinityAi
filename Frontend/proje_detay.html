@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - NASA Space Apps Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(64, 156, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 100, 100, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(100, 255, 200, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #0c0c2e 0%, #1a1a4a 25%, #2d2d6b 50%, #1a1a4a 75%, #0c0c2e 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            min-height: 100vh;
+            padding: 30px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .planet {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(1px);
+            z-index: -1;
+            animation: float 20s infinite linear;
+        }
+
+        .planet-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #c44569, #192a56);
+            top: 10%;
+            left: 5%;
+            box-shadow: 0 0 100px rgba(255, 107, 107, 0.4);
+            animation-delay: 0s;
+        }
+
+        .planet-2 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 40% 40%, #4ecdc4, #44a08d, #093145);
+            top: 60%;
+            right: 8%;
+            box-shadow: 0 0 80px rgba(78, 205, 196, 0.3);
+            animation-delay: -5s;
+            animation-duration: 25s;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        .star-large {
+            width: 3px;
+            height: 3px;
+            box-shadow: 0 0 10px white;
+        }
+
+        .star-medium {
+            width: 2px;
+            height: 2px;
+            box-shadow: 0 0 6px white;
+        }
+
+        .star-small {
+            width: 1px;
+            height: 1px;
+            box-shadow: 0 0 4px white;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(0px) rotate(180deg); }
+            75% { transform: translateY(20px) rotate(270deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nasa-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: rgba(11, 61, 145, 0.15);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .nasa-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(252, 61, 33, 0.1) 0%, 
+                rgba(11, 61, 145, 0.2) 50%, 
+                rgba(135, 206, 235, 0.1) 100%);
+            border-radius: 30px;
+            z-index: -1;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nasa-logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 0 50px rgba(252, 61, 33, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .nasa-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 0 80px rgba(252, 61, 33, 0.8),
+                inset 0 0 40px rgba(255, 255, 255, 0.4);
+        }
+
+        .nasa-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .datafarm-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 0 60px rgba(0, 150, 255, 0.5),
+                inset 0 0 40px rgba(255, 255, 255, 0.2);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .datafarm-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 0 100px rgba(0, 150, 255, 0.7),
+                inset 0 0 50px rgba(255, 255, 255, 0.3);
+        }
+
+        .datafarm-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+            background: transparent;
+        }
+
+        .page-title {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #fc3d21, #87ceeb, #0b3d91, #fc3d21);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 30px 0;
+            text-shadow: 0 0 50px rgba(252, 61, 33, 0.5);
+            font-weight: 900;
+            letter-spacing: 4px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 0 0 50px rgba(252, 61, 33, 0.5); }
+            50% { text-shadow: 0 0 80px rgba(252, 61, 33, 0.8), 0 0 100px rgba(135, 206, 235, 0.6); }
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #87ceeb;
+            margin-bottom: 15px;
+            font-weight: 300;
+            line-height: 1.6;
+            text-shadow: 0 0 20px rgba(135, 206, 235, 0.5);
+        }
+
+        /* World Map Section */
+        .world-map-section {
+            position: relative;
+            margin: 50px 0;
+            padding: 60px;
+            background: rgba(11, 61, 145, 0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(252, 61, 33, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .world-map-title {
+            font-size: 2rem;
+            color: #fc3d21;
+            margin-bottom: 40px;
+            text-shadow: 
+                0 0 30px rgba(252, 61, 33, 0.7),
+                0 0 60px rgba(252, 61, 33, 0.4);
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .map-container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1400px;
+            margin-bottom: 40px;
+        }
+
+        .map-wrapper {
+            position: relative;
+            width: 900px;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 50px rgba(0, 242, 254, 0.3),
+                0 0 100px rgba(11, 61, 145, 0.2);
+            background: #1a1a4a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .world-map-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        .country-selector {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-width: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .country-selector h3 {
+            color: #fc3d21;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #00f2fe;
+            padding-bottom: 10px;
+        }
+
+        .country-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .country-item {
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .country-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            border-color: #00f2fe;
+        }
+
+        .country-item.selected {
+            background: rgba(252, 61, 33, 0.2);
+            border-color: #fc3d21;
+            color: #ff6b6b;
+        }
+
+        /* Chat Log Area */
+        .chat-log-section {
+            width: 100%;
+            max-width: 1400px;
+            margin-top: 30px;
+        }
+
+        .chat-log-container {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .chat-log-container h3 {
+            color: #fc3d21;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #00f2fe;
+            padding-bottom: 10px;
+        }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .message.user {
+            background: rgba(11, 61, 145, 0.3);
+            border-left: 4px solid #0b3d91;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .message.assistant {
+            background: rgba(252, 61, 33, 0.2);
+            border-left: 4px solid #fc3d21;
+            align-self: flex-start;
+        }
+
+        .message.system {
+            background: rgba(0, 242, 254, 0.2);
+            border-left: 4px solid #00f2fe;
+            align-self: center;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .message-time {
+            font-size: 0.8rem;
+            color: #87ceeb;
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+
+        .project-content {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 50px;
+            border-radius: 30px;
+            margin: 40px 0;
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-section {
+            margin-bottom: 40px;
+        }
+
+        .project-section-title {
+            font-size: 2.2rem;
+            color: #fc3d21;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(252, 61, 33, 0.5);
+            border-left: 5px solid #00f2fe;
+            padding-left: 20px;
+        }
+
+        .project-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #87ceeb;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid #00f2fe;
+            transition: all 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+            padding: 0 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, rgba(11, 61, 145, 0.8), rgba(252, 61, 33, 0.8));
+            color: white;
+            border: none;
+            padding: 25px 20px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .nav-button:hover::before {
+            left: 100%;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(252, 61, 33, 0.4),
+                0 0 30px rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(252, 61, 33, 0.9), rgba(11, 61, 145, 0.9));
+        }
+
+        .button-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        .button-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(11, 61, 145, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-text {
+            color: #87ceeb;
+            font-size: 1.1rem;
+            text-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
+        }
+
+        /* Turkey Buttons */
+        .turkey-buttons {
+            display: none;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+            padding: 0 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .turkey-buttons.active {
+            display: grid;
+        }
+
+        .turkey-button {
+            background: linear-gradient(135deg, rgba(252, 61, 33, 0.8), rgba(11, 61, 145, 0.8));
+            color: white;
+            border: none;
+            padding: 20px 15px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .turkey-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .turkey-button:hover::before {
+            left: 100%;
+        }
+
+        .turkey-button:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 
+                0 12px 35px rgba(252, 61, 33, 0.4),
+                0 0 25px rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(252, 61, 33, 0.9), rgba(11, 61, 145, 0.9));
+        }
+
+        .turkey-button-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+        }
+
+        .turkey-button-text {
+            font-size: 1rem;
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: #87ceeb;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .error-message {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid #ff4444;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 1200px) {
+            .map-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .map-wrapper {
+                width: 100%;
+                max-width: 900px;
+            }
+            
+            .country-selector {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.8rem;
+            }
+            
+            .action-buttons {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 30px;
+            }
+            
+            .nav-button {
+                min-height: 90px;
+                padding: 20px 15px;
+            }
+
+            .turkey-buttons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 30px;
+            }
+
+            .turkey-button {
+                min-height: 70px;
+                padding: 15px 10px;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .planet-1, .planet-2 {
+                display: none;
+            }
+
+            .world-map-section {
+                padding: 30px 20px;
+            }
+
+            .project-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="nasa-header">
+            <div class="logo-container">
+                <div class="nasa-logo">
+                    <img src="nasalogo2.png" alt="NASA Logo" class="nasa-logo-img">
+                </div>
+                <div class="datafarm-logo">
+                    <img src="foto1.jpg" alt="Datafarm Logo" class="datafarm-logo-img">
+                </div>
+            </div>
+
+            <h1 class="page-title">PROJECT DETAILS</h1>
+            <p class="subtitle">NASA Space Apps Challenge 2025 - Datafarm Team</p>
+            <p class="subtitle">Smart farmlands, nourishing futures.</p>
+        </div>
+
+        <!-- Turkey Buttons -->
+        <div class="turkey-buttons" id="turkeyButtons">
+            <button class="turkey-button" onclick="notifyAuthorities()">
+                <div class="turkey-button-icon">📢</div>
+                <div class="turkey-button-text">NOTIFY AUTHORITIES</div>
+            </button>
+            
+            <button class="turkey-button" onclick="scanArea()">
+                <div class="turkey-button-icon">🔍</div>
+                <div class="turkey-button-text">LAND DREDGING</div>
+            </button>
+        </div>
+
+        <!-- World Map Section -->
+        <div class="world-map-section">
+            <h2 class="world-map-title">🌍 OUR DATA MAP</h2>
+            <div class="map-container">
+                <div class="map-wrapper">
+                    <img src="World Map.png" alt="World Map" class="world-map-img" onerror="handleImageError(this)">
+                </div>
+                
+                <div class="country-selector">
+                    <h3>🌎 Select Country</h3>
+                    <div class="country-list">
+                        <div class="country-item" data-country="Turkey">Turkey</div>
+                        <div class="country-item" data-country="United States">United States</div>
+                        <div class="country-item" data-country="Canada">Canada</div>
+                        <div class="country-item" data-country="Brazil">Brazil</div>
+                        <div class="country-item" data-country="Argentina">Argentina</div>
+                        <div class="country-item" data-country="Mexico">Mexico</div>
+                        <div class="country-item" data-country="United Kingdom">United Kingdom</div>
+                        <div class="country-item" data-country="Germany">Germany</div>
+                        <div class="country-item" data-country="France">France</div>
+                        <div class="country-item" data-country="Italy">Italy</div>
+                        <div class="country-item" data-country="Spain">Spain</div>
+                        <div class="country-item" data-country="Russia">Russia</div>
+                        <div class="country-item" data-country="China">China</div>
+                        <div class="country-item" data-country="India">India</div>
+                        <div class="country-item" data-country="Japan">Japan</div>
+                        <div class="country-item" data-country="South Korea">South Korea</div>
+                        <div class="country-item" data-country="Australia">Australia</div>
+                        <div class="country-item" data-country="Egypt">Egypt</div>
+                        <div class="country-item" data-country="South Africa">South Africa</div>
+                        <div class="country-item" data-country="Nigeria">Nigeria</div>
+                        <div class="country-item" data-country="Kenya">Kenya</div>
+                        <div class="country-item" data-country="Saudi Arabia">Saudi Arabia</div>
+                        <div class="country-item" data-country="United Arab Emirates">United Arab Emirates</div>
+                        <div class="country-item" data-country="Indonesia">Indonesia</div>
+                        <div class="country-item" data-country="Thailand">Thailand</div>
+                        <div class="country-item" data-country="Vietnam">Vietnam</div>
+                        <div class="country-item" data-country="Philippines">Philippines</div>
+                        <div class="country-item" data-country="Malaysia">Malaysia</div>
+                        <div class="country-item" data-country="Pakistan">Pakistan</div>
+                        <div class="country-item" data-country="Bangladesh">Bangladesh</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Log Area -->
+            <div class="chat-log-section">
+                <div class="chat-log-container">
+                    <h3>💬 LLM API Analysis Results</h3>
+                    <div class="loading" id="loadingIndicator">API'ye bağlanıyor...</div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message system">
+                            Welcome to Datafarm AI Analysis! Select a country to see agricultural insights and recommendations.
+                            <div class="message-time">System • Just now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <div class="project-section">
+                <h3 class="project-section-title">🚀 Project Summary</h3>
+                <p class="project-description">
+                    As the Datafarm team, our project developed within the scope of NASA Space Apps Challenge 2025 
+                    aims to provide innovative solutions for agricultural technologies by analyzing global datasets. 
+                    We process data collected worldwide using artificial intelligence and machine learning techniques 
+                    and transform them into meaningful insights.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h3 class="project-section-title">🎯 Main Objectives</h3>
+                <ul class="feature-list">
+                    <li>Quickly and accurately identify agricultural suitable areas on the world map using artificial intelligence.</li>
+                    <li>Provide an innovative and technological approach to agricultural planning with satellite data.</li>
+                    <li>Keep agricultural potential continuously updated with real-time data.</li>
+                    <li>Create an AI-based decision support system for agricultural planning.</li>
+                    <li>Develop a scientific guide for sustainable agriculture and food security on a global scale.</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h3 class="project-section-title">🛠️ Technologies Used</h3>
+                <ul class="feature-list">
+                    <li>Python & TensorFlow - Deep Learning Models</li>
+                    <li>React & Node.js - Web Interface and Backend</li>
+                    <li>MongoDB - AI Training Dataset Storage</li>
+                    <li>NASA APIs - Space Data Access</li>
+                    <li>Satellite Image Processing - Geographic Data Analysis</li>
+                    <li>Machine Learning Algorithms - Predictive Analytics</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h3 class="project-section-title">📊 Data Sources</h3>
+                <p class="project-description">
+                    In our project, we use NASA's open data sources, ESA satellite data, NOAA climate data, 
+                    and datasets provided by various space agencies. We process these data with machine learning 
+                    algorithms to obtain new findings that will contribute to agricultural research.
+                </p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="nav-button" onclick="window.open('index.html', '_self')">
+                <div class="button-icon">🏠</div>
+                <div class="button-text">Home</div>
+            </button>
+            
+            <button class="nav-button" onclick="window.open('iletisim.html', '_self')">
+                <div class="button-icon">📞</div>
+                <div class="button-text">Contact</div>
+            </button>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">© 2025 Datafarm Team - NASA Space Apps Challenge</p>
+            <p class="footer-text">Trabzon University Artificial Intelligence Engineering</p>
+        </div>
+    </div>
+
+    <script>
+        let currentSelectedCountry = '';
+
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 200;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                const size = Math.random();
+                if (size > 0.7) {
+                    star.className = 'star star-large';
+                } else if (size > 0.4) {
+                    star.className = 'star star-medium';
+                } else {
+                    star.className = 'star star-small';
+                }
+                
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function handleImageError(img) {
+            console.log('World Map image failed to load');
+            img.style.display = 'none';
+            const mapWrapper = img.parentElement;
+            mapWrapper.style.background = 'linear-gradient(135deg, #1a1a4a, #2d2d6b)';
+            mapWrapper.style.display = 'flex';
+            mapWrapper.style.alignItems = 'center';
+            mapWrapper.style.justifyContent = 'center';
+            mapWrapper.style.color = '#87ceeb';
+            mapWrapper.style.fontSize = '1.5rem';
+            mapWrapper.innerHTML = '🌍 World Map Image Not Found<br><small>Please check if "World Map.png" exists in the folder</small>';
+        }
+
+        function notifyAuthorities() {
+            addMessage('system', '📢 Authorities have been notified about agricultural situation in Turkey. Local authorities will contact you soon.');
+            alert('NOTIFY AUTHORITIES: THE AUTHORITIES HAVE BEEN NOTIFIED..');
+        }
+
+        // GELİŞTİRİLMİŞ scanArea FONKSİYONU - Çoklu method denemesi
+        async function scanArea() {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            loadingIndicator.style.display = 'block';
+            
+            addMessage('system', '🔍 Starting real data analysis... Connecting to API...');
+            
+            try {
+                // Önce GET methodu dene
+                let response = await fetch('http://localhost:8000/api/comprehensive-real-analysis?max_areas=10&sample_size=50');
+                
+                if (!response.ok) {
+                    // GET çalışmazsa POST dene
+                    addMessage('system', '🔄 GET method failed, trying POST...');
+                    response = await fetch('http://localhost:8000/api/comprehensive-real-analysis', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            max_areas: 10,
+                            sample_size: 50
+                        })
+                    });
+                }
+
+                if (!response.ok) {
+                    throw new Error(`API hatası: ${response.status} ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // BAŞARILI SONUÇ
+                    addMessage('assistant', `✅ REAL DATA ANALYSIS COMPLETED!`);
+                    addMessage('assistant', `📊 Total analysis: ${data.summary.total_analyzed} coordinates`);
+                    addMessage('assistant', `🌾 Productive areas: ${data.summary.productive_areas}`);
+                    addMessage('assistant', `🎯 Success rate: ${data.summary.success_rate}%`);
+                    
+                    // EN İYİ 3 ALANI GÖSTER
+                    if (data.top_areas && data.top_areas.length > 0) {
+                        data.top_areas.slice(0, 3).forEach(area => {
+                            addMessage('assistant', 
+                                `📍 ${area.rank}. ${area.coordinates}\n` +
+                                `   🎯 Score: ${area.score}/100\n` +
+                                `   💧 Water: ${area.water}\n` +
+                                `   📐 Slope: ${area.slope}\n` +
+                                `   ⛰ Elevation: ${area.elevation}`
+                            );
+                        });
+                    }
+                    
+                    // GÖRSELLİ ÇIKTIYI DA GÖSTER
+                    if (data.visual_output) {
+                        addMessage('system', '📋 DETAILED REPORT:');
+                        addMessage('system', data.visual_output);
+                    }
+                    
+                } else {
+                    addMessage('assistant', `❌ Analysis failed: ${data.message || 'Unknown error'}`);
+                }
+                
+            } catch (error) {
+                console.error('API connection error:', error);
+                addMessage('assistant', `❌ API connection error: ${error.message}`);
+                addMessage('assistant', '⚠️ Please ensure Python API server is running and has correct endpoints');
+                
+                // API'nin mevcut endpointlerini kontrol et
+                try {
+                    const testResponse = await fetch('http://localhost:8000/');
+                    if (testResponse.ok) {
+                        addMessage('system', '✅ API server is running! Check endpoint path.');
+                    }
+                } catch (testError) {
+                    addMessage('system', '❌ Cannot reach API server!');
+                }
+            } finally {
+                loadingIndicator.style.display = 'none';
+            }
+        }
+
+        function toggleTurkeyButtons(show) {
+            const turkeyButtons = document.getElementById('turkeyButtons');
+            if (show) {
+                turkeyButtons.classList.add('active');
+            } else {
+                turkeyButtons.classList.remove('active');
+            }
+        }
+
+        // Country selection functionality
+        function setupCountrySelection() {
+            const countryItems = document.querySelectorAll('.country-item');
+            
+            countryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove selected class from all items
+                    countryItems.forEach(i => i.classList.remove('selected'));
+                    
+                    // Add selected class to clicked item
+                    this.classList.add('selected');
+                    
+                    const countryName = this.getAttribute('data-country');
+                    currentSelectedCountry = countryName;
+                    
+                    // Show/hide Turkey buttons
+                    if (countryName === 'Turkey') {
+                        toggleTurkeyButtons(true);
+                    } else {
+                        toggleTurkeyButtons(false);
+                    }
+                    
+                    // Add user message
+                    addMessage('user', `Show agricultural analysis for ${countryName}`);
+                    
+                    // Simulate LLM API response
+                    setTimeout(() => {
+                        const analysis = generateCountryAnalysis(countryName);
+                        addMessage('assistant', analysis);
+                    }, 1000);
+                });
+            });
+        }
+
+        function addMessage(type, text) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            const time = new Date().toLocaleTimeString();
+            
+            // Eğer çok satırlı metinse, satır sonlarını <br> ile değiştir
+            const formattedText = text.replace(/\n/g, '<br>');
+            
+            messageDiv.innerHTML = `
+                <div class="message-content">${formattedText}</div>
+                <div class="message-time">${type.charAt(0).toUpperCase() + type.slice(1)} • ${time}</div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function generateCountryAnalysis(country) {
+            const analyses = {
+                'Turkey': 'Turkey has diverse agricultural potential with fertile lands in Anatolia. Key crops: wheat, barley, cotton, and hazelnuts. Climate zones vary from Mediterranean to continental. Recommended: Invest in irrigation technology and organic farming.',
+                'United States': 'USA has vast agricultural lands with advanced technology. Major crops: corn, soybeans, wheat. Strong research infrastructure and precision farming adoption.',
+                'Brazil': 'Brazil is agricultural powerhouse with tropical climate. Major exports: soybeans, coffee, sugar. Focus on sustainable Amazon practices.',
+                'India': 'India has diverse agriculture with monsoon dependency. Key crops: rice, wheat, spices. Opportunities in technology adoption and water management.',
+                'China': 'China has intensive agriculture with rice and wheat as staples. Modernizing with smart farming and vertical agriculture technologies.'
+            };
+            
+            return analyses[country] || `Analysis for ${country}: This country has unique agricultural characteristics. Further satellite data analysis recommended for specific crop recommendations and soil analysis.`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            setupCountrySelection();
+        });
+
+        function openPage(pageName) {
+            window.open(pageName, '_self');
+        }
+    </script>
+</body>
+</html>
