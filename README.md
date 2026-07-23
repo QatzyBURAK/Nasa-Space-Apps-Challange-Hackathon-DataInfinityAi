@@ -3,7 +3,7 @@ AI system that analyzes NASA and global geospatial data to detect unused lands a
 # 🌍 DataInfinityAI  
 **AI-Driven Earth Observation & Agricultural Productivity Analysis**  
 ### NASA Space Apps Challenge 2025 — Project: DATAFARM  
-🔗 [Live Website](https://datainfinityai.com)
+🔗 [Live Website](https://datainfinityai.com) (Closed)
 
 ---
 
